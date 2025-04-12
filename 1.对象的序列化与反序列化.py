@@ -105,3 +105,134 @@
 #     print()
 
 # wb.close()
+
+
+# from docx import Document
+# from docx.shared import Pt,Cm
+
+# document = Document()#创建代表word文档的对象
+
+# document.add_heading("快快乐乐学Python", 0)#添加标题
+
+# p = document.add_paragraph("Python是一门非常优秀的语言，学习它可以提高工作效率，提升编程能力。")#添加段落
+# p.add_run("它")
+# run=p.add_run("简单")#添加运行对象
+# run.bold=True#设置粗体
+# run.font.size = Pt(18)#设置字体大小
+# p.add_run("而且")
+# run=p.add_run("优雅")
+# run.underline=True#设置下划线
+# run.font.size = Pt(18)
+# p.add_run("。")
+
+# document.add_heading("Heding, level 1", level=1)#添加一级标题
+# document.add_paragraph("Intense quote", style="Intense Quote")#添加强调的段落
+# document.add_paragraph("first item in unordered list", style="List Bullet")#添加无序列表
+# document.add_paragraph("second item in ordered list", style="List Bullet")#添加无序列表
+# document.add_paragraph("first item in ordered list", style="List Number")#添加有序列表
+# document.add_paragraph("second item in ordered list", style="List Number")#添加有序列表
+# # document.add_picture("python.png", width=Cm(15))#添加图片,width为图片宽度,需要图片路径
+
+# document.add_section()#添加分节符
+
+# records=(('张三', 25, 180), ('李四', 23, 160), ('王五', 22, 170))
+# table = document.add_table(rows=1, cols=3)#添加表格
+# table.style = 'Dark List'#设置表格样式
+# hdr_cells = table.rows[0].cells#获取表格的第一行的单元格
+# hdr_cells[0].text = "姓名"
+# hdr_cells[1].text = "年龄"
+# hdr_cells[2].text = "身高"
+
+# for name,age,height in records:#为表格添加行
+#     row_cells = table.add_row().cells
+#     row_cells[0].text = name
+#     row_cells[1].text = str(age)
+#     row_cells[2].text = str(height)
+
+# document.add_page_break()#添加分页符
+
+# document.save("test.docx")#保存文档
+
+# doc = Document("离职证明.docx")
+# for no,para in enumerate(doc.paragraphs):
+#     print(no,para.text)
+
+
+# employees = [
+#     {
+#         'name': '骆昊',
+#         'id': '100200198011280001',
+#         'sdate': '2008年3月1日',
+#         'edate': '2012年2月29日',
+#         'department': '产品研发',
+#         'position': '架构师',
+#         'company': '成都华为技术有限公司'
+#     },
+#     {
+#         'name': '王大锤',
+#         'id': '510210199012125566',
+#         'sdate': '2019年1月1日',
+#         'edate': '2021年4月30日',
+#         'department': '产品研发',
+#         'position': 'Python开发工程师',
+#         'company': '成都谷道科技有限公司'
+#     },
+#     {
+#         'name': '李元芳',
+#         'id': '2102101995103221599',
+#         'sdate': '2020年5月10日',
+#         'edate': '2021年3月5日',
+#         'department': '产品研发',
+#         'position': 'Java开发工程师',
+#         'company': '同城企业管理集团有限公司'
+#     },
+# ]
+# for employee in employees:
+#     doc=Document("离职证明.docx")
+#     for para in doc.paragraphs:
+#         if "{" not in para.text:
+#             continue
+#         for run in para.runs:
+#             if "{" not in run.text:
+#                 continue
+            
+#             start=run.text.find("{")
+#             end=run.text.find("}")
+#             key,placeholder=run.text[start+1:end],run.text[start:end+1]
+#             run.text=run.text.replace(placeholder,employee[key])
+
+#     doc.save(f"{employee['name']}离职证明.docx")
+
+
+"""
+正则表达式
+"""
+# import re
+# username=input("请输入用户名：")
+# qq=input("请输入QQ号：")
+# m1=re.match(r"^[a-zA-Z0-9_]{6,20}$",username)
+# if not m1:
+#     print("用户名格式不正确,请输入6-20位字母、数字、下划线")
+# m2=re.fullmatch(r"^[1-9]\d{4,11}$",qq)
+# if not m2:
+#     print("QQ号格式不正确,请输入11位数字")
+# if m1 and m2:
+#     print("用户名和QQ号格式正确")
+
+import re
+pattern = re.compile(r'(?<=\D)1[34578]\d{9}(?=\D)')
+sentence = '''重要的事情说8130123456789遍，我的手机号是13512346789这个靓号，
+不是15600998765，也不是110或119，王大锤的手机号才是15600998765。'''
+
+result = pattern.findall(sentence)
+for r in result:
+    print(r)
+print("-----------华丽的分割线-----------")
+result = pattern.finditer(sentence)
+for r in result:
+    print(r.group())
+print("-----------华丽的分割线-----------")
+m=pattern.search(sentence)
+while m:
+    print(m.group())
+    m=pattern.search(sentence,m.end())
