@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <p>欢迎注册,请填写以下信息：</p>
+    <form action="/post/register" method="post">
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password" >输入密码:</label><!---->
+        <input type="password" id="password" name="password"><br>
+        <label for="confirm_password">确认密码:</label>
+        <input type="password" id="confirm_password" name="confirm_password"><br><br>
+        <label for="email">邮箱:</label>
+        <input type="email" id="email" name="email"><br><br>
+        性别：
+        <input type="radio" name="gender" value="male">男
+        <input type="radio" name="gender" value="female">女
+        <br><br>
+        
+        爱好：
+        <input type="checkbox" name="hobby" value="reading">阅读
+        <input type="checkbox" name="hobby" value="swimming">游泳
+        <input type="checkbox" name="hobby" value="running">跑步
+        <br><br>
+        城市：
+        <select name="city">
+            <option value="beijing">北京</option>
+            <option value="shanghai">上海</option>
+            <option value="guangzhou">广州</option>
+            <option value="shenzhen">深圳</option>
+        </select>
+        <br><br>
+        个人标签：<br>
+        <select name="tags" multiple> 
+            <option value="student">学生</option>
+            <option value="worker">社畜</option>
+            <option value="playinggame">打游戏</option>
+            <option value="sleeping">睡觉</option>
+            <option value="eating">吃饭</option>
+            <option value="havingfun">开心</option>
+            <option value="friends">交朋友</option>
+        </select><br><br>
+        个人简介：<br>
+        <textarea name="introduction" rows="5" cols="30"></textarea><br>
+        <input type="checkbox" name="agreement" value="true">我已阅读并同意《用户协议》<br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
