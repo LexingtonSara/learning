@@ -104,58 +104,15 @@ if __name__ == '__main__':
     <!--结束下拉框-->
     <!--多行文本-->
     <textarea rows="5" cols="30"></textarea><!--创建多行文本框,rows属性设置行数,cols属性设置列数-->
+    <form action="http://www.baidu.com" method="post"> <!--创建表单,action属性设置提交地址,method属性设置提交方式-->
+        <input type="text" name="username" /> <!--创建输入框,用于输入用户名-->
+        <input type="password" name="password" /> <!--创建密码输入框,用于输入密码-->
+        <input type="submit" value="提交" /> <!--创建提交按钮,用于提交表单-->
+    </form> <!--结束表单-->
 </body>
 </html>
 ```
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>用户注册</title>
-</head>
-<body>
-    <h1>用户注册</h1>
-    <p>欢迎注册，请填写以下信息：</p>
-    <div>
-        用户名：<input type="text" name="username"><br>
-        密码：<input type="password" name="password"><br>
-        确认密码：<input type="password" name="confirm_password"><br>
-        邮箱：<input type="email" name="email"><br>
-        性别：<input type="radio" name="gender" value="male">男
-        <input type="radio" name="gender" value="female">女<br>
-        爱好：
-        <input type="checkbox" name="hobby[]" value="reading"> 阅读
-        <input type="checkbox" name="hobby[]" value="swimming"> 游泳
-        <input type="checkbox" name="hobby[]" value="running"> 跑步
-        <input type="checkbox" name="hobby[]" value="basketball"> 篮球
-        <input type="checkbox" name="hobby[]" value="football"> 足球
-        <input type="checkbox" name="hobby[]" value="pingpang"> 乒乓球<br>
-        城市：
-        <select name="city">
-            <option value="beijing">北京</option>
-            <option value="shanghai">上海</option>
-            <option value="guangzhou">广州</option>
-            <option value="shenzhen">深圳</option>
-        </select><br>
-        个人标签：<br>
-        <select name="tag[]" multiple> 
-            <option value="student">学生</option>
-            <option value="worker">社畜</option>
-            <option value="playinggame">打游戏</option>
-            <option value="sleeping">睡觉</option>
-            <option value="eating">吃饭</option>
-            <option value="havingfun">开心</option>
-            <option value="friends">交朋友</option>
-        </select><br>
-        个人简介：<br>
-        <textarea name="introduction" rows="5" cols="30"></textarea><br>
-        <input type="submit" value="submit提交">
-        <input type="button" value="button提交">
-    </div>
-</body>
-</html>
-```
+
 网络请求流程:
 1.用户在浏览器输入网址,访问Web服务器
 浏览器会发送数据到Web服务器的80端口,本质上发送的是字符串数据.
