@@ -37,6 +37,8 @@ def index():#当用户访问根URL时,执行该函数
 if __name__ == '__main__':
     app.run(debug=True)#启动Flask应用,debug=True表示调试模式,可以看到错误信息
 ```
+二、HTML简介
+HTML(Hypertext Markup Language)是一种用于创建网页的标记语言,它是一种基于XML的标记语言,是一种标准通用标记语言.HTML使用标记标签来描述网页的内容,如文本、图片、表格、链接等.HTML标签由尖括号包围,如<html>、<body>、<h1>、<p>等.
 ```html
 <!DOCTYPE html>#设置文档类型为HTML
 <html>#创建HTML文档
@@ -47,9 +49,10 @@ if __name__ == '__main__':
 <body> <!--块级标签,独占一行,-->
     <h1>Hello, World!</h1> <!--创建标题,显示Hello, World!;标题一共有6级,从h1到h6,h1是最重要的标题,h6是最低级的标题-->
     <div>第一个html网页</div><!--创建div元素,并添加内容;可以容纳其他HTML元素,如图片、文本、表格等-->
+    <p>这是我的第一个网页</p><!--创建p元素,并添加内容;p标签是段落标签,用来显示文本内容,可以包含多个<span>、<div>等标签-->   
     <!--行内标签,不独占一行,可以连接起来-->
     <span style="color:red;">这是我的第一个网页</span><!--创建span元素,并添加内容;span标签是行内标签,不独占一行,可以嵌入到其他标签中,如<p>标签中-->    <br><!--创建换行符-->
-    <p>这是我的第一个网页</p><!--创建p元素,并添加内容;p标签是段落标签,用来显示文本内容,可以包含多个<span>、<div>等标签-->   <br><!--创建换行符-->
+    
     <!--标签内可以添加属性信息-->
     <a href="https://www.baidu.com" target="_blank">百度</a><!--创建超链接,并添加链接地址;a标签是超链接标签,可以将用户从当前页面转到其他页面,或者下载文件等-->    <br><!--创建换行符-->
     <img style ="width:100px;height:100px;" src="https://www.baidu.com/img/bd_logo1.png" alt="百度logo"><!--创建图片,并添加图片地址和替代文字;img标签是图片标签,可以显示图片,可以用本地文件路径或网络地址来指定图片源.自闭合标签,没有内容,无需结束标签-->    <br><!--创建换行符-->
@@ -120,6 +123,7 @@ if __name__ == '__main__':
 GET请求[URL方法/表单提交]:get请求、跳转、向后台传入数据,数据会拼接在url后面,以?分割.
 POST请求[表单提交]:post请求、提交表单、向后台传入数据,数据会拼接在请求体中.
 2.Web服务器接收到请求,解析请求信息,生成HTTP请求报文
+
 
 二、Django简介
 Django是一个Python Web框架,是一个高级的Web应用开发框架,它可以快速开发出功能完善的Web应用.Django是用Python语言编写的,使用了MVC(Model-View-Controller)模式,MVC模式将应用程序分成三个层次:模型层、视图层、控制器层.Django项目中我们称之为MTV,MTV中的M跟MVC中的M没有区别,就是代表数据的模型,T代表了网页模板（显示数据的视图）,而V代表了视图函数,在Django框架中,视图函数和Django框架本身一起扮演了MVC中C的角色.
