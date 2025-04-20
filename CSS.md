@@ -164,6 +164,34 @@ vertical-align:设置元素内文本的垂直对齐方式.top顶端对齐,middle
 margin:auto;可以让块元素内的图片水平居中.
 垂直对齐:通过设置padding实现垂直居中.
 
+
+    CSS 伪类和伪元素
+伪类和伪元素是CSS3中新增的概念,用于描述特殊的状态和选择器.
+伪类用于向某些选择器添加特殊的效果,如:hover、:active、:focus等.
+伪元素用于创建一些特殊的元素,如::before、::after等.
+伪类的语法:selector:pseudo-class{property:value;}或者selector.class:pseudo-class{property:value;}
+
+anchor伪类:用于设置超链接的状态:
+    a:link:默认样式,未访问的链接.
+    a:visited:已访问的链接.
+    a:hover:鼠标悬停在链接上时的样式.#必须定义在a:link和a:visited之后才是有效的.
+    a:active:链接被点击时的样式.#必须定义在a:hover之后才是有效的.
+p:first-child:选择器匹配作为任何元素的第一个子元素的<p>元素.
+p>i:first-child:选择器匹配所有<p>元素的第一个<i>元素.
+p:first-child i:选择器匹配所有作为元素的第一个子元素的<p>元素的所有<i>元素.
+:last-child:用法同first-child,匹配作为任何元素的最后一个子元素的元素.
+:nth-child(n):选择器匹配作为其父元素的第n个子元素的元素.
+:nth-last-child(n):选择器匹配作为其父元素的倒数第n个子元素的元素.
+:before:在元素之前添加内容,如p:before{content:"Hello, ";}在所有<p>元素之前添加"Hello, "内容.
+:after:在元素之后添加内容,如p:after{content:" World!";}在所有<p>元素之后添加" World!"内容.
+
+伪元素的语法:selector::pseudo-element{property:value;}
+
+::first-line:选择器匹配元素的第一行内容.
+::first-letter:选择器匹配元素的第一个字母.只能用于块级元素.
+
+
+
     CSS 导航栏
 垂直导航栏
 
